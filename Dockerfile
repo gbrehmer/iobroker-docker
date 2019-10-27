@@ -1,4 +1,4 @@
-FROM node:8-stretch
+FROM node:10-buster-slim
 MAINTAINER Valentin Mayer
 
 #ENV DEBIAN_FRONTEND=noninteractive
@@ -18,7 +18,7 @@ RUN chmod +x /usr/local/bin/*
 RUN npm install -g npm@6
 
 # Install iobroker
-RUN curl -sL https://raw.githubusercontent.com/ioBroker/ioBroker/master/installer.sh | bash -
+RUN curl -sL https://iobroker.net/install.sh | bash - && echo $(hostname) > .install_host
 
 # Deasaalate permission from root to user "iobroker", outherwise iobroker will be started by root -> this leadsto error during adaptor installation
 USER iobroker
