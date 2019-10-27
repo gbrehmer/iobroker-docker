@@ -1,5 +1,4 @@
 FROM node:10-buster-slim
-MAINTAINER Valentin Mayer
 
 #ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Berlin
@@ -22,6 +21,8 @@ RUN curl -sL https://iobroker.net/install.sh | bash - && echo $(hostname) > .ins
 
 # Deasaalate permission from root to user "iobroker", outherwise iobroker will be started by root -> this leadsto error during adaptor installation
 USER iobroker
+
+VOLUME /opt/iobroker/
 
 EXPOSE 8081 
 ENTRYPOINT ["run.sh"]
