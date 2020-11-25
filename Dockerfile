@@ -24,6 +24,7 @@ USER iobroker
 
 VOLUME /opt/iobroker/
 
-EXPOSE 8081 
+EXPOSE 8081
+EXPOSE 8082
 ENTRYPOINT ["run.sh"]
 CMD ["start"]
