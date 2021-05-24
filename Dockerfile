@@ -1,4 +1,4 @@
-FROM node:12-buster-slim
+FROM node:14-buster-slim
 
 #ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Berlin
@@ -14,7 +14,7 @@ ADD bin/* /usr/local/bin/
 RUN chmod +x /usr/local/bin/*
 
 # iobroker needs npm > 6.4.1
-RUN npm install -g npm@6
+RUN npm install -g npm@7
 
 # Install iobroker
 RUN curl -sL https://iobroker.net/install.sh | bash - && echo $(hostname) > .install_host
