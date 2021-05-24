@@ -8,7 +8,7 @@ RUN apt-get update -y && apt-get upgrade -y \
 	acl libcap2-bin \
 	vim bash python \
 	git \ 
- 	tzdata curl
+ 	tzdata curl udev
 	
 ADD bin/* /usr/local/bin/
 RUN chmod +x /usr/local/bin/*
