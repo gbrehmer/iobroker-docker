@@ -23,6 +23,7 @@ RUN curl -sL https://iobroker.net/install.sh | bash - && echo $(hostname) > .ins
 USER iobroker
 
 VOLUME /opt/iobroker/
+WORKDIR /opt/iobroker
 
 EXPOSE 8081
 EXPOSE 8082
