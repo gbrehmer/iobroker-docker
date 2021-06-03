@@ -1,2 +1,2 @@
 # iobroker-docker
-latest node 12 release in use
+latest node 14 release in use
