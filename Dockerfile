@@ -1,4 +1,4 @@
-FROM node:14-buster-slim
+FROM node:16-buster-slim
 
 #ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Berlin
@@ -13,8 +13,8 @@ RUN apt-get update -y && apt-get upgrade -y \
 ADD bin/* /usr/local/bin/
 RUN chmod +x /usr/local/bin/*
 
-# iobroker needs npm > 6.4.1
-RUN npm install -g npm@6
+# iobroker needs npm >= 8
+RUN npm install -g npm@8
 
 # Install iobroker
 RUN curl -sL https://iobroker.net/install.sh | bash - && echo $(hostname) > .install_host
