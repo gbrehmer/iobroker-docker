@@ -1,4 +1,4 @@
-FROM node:16-buster-slim
+FROM node:18-buster-slim
 
 #ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Berlin
