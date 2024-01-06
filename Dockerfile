@@ -11,8 +11,8 @@ RUN apt-get update -y && apt-get upgrade -y \
  	tzdata curl udev bluez
 	
 ADD bin/* /usr/local/bin/
-RUN chmod +x /usr/local/bin/*
 RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs &> /dev/null
+RUN chmod +x /usr/local/bin/*
 
 # iobroker needs npm >= 9
 RUN npm install -g npm@9
