@@ -12,9 +12,10 @@ RUN apt-get update -y && apt-get upgrade -y \
 	
 ADD bin/* /usr/local/bin/
 RUN chmod +x /usr/local/bin/*
+RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs &> /dev/null
 
-# iobroker needs npm >= 8
-RUN npm install -g npm@8
+# iobroker needs npm >= 9
+RUN npm install -g npm@9
 
 # Install iobroker
 RUN curl -sL https://iobroker.net/install.sh | bash - && echo $(hostname) > .install_host
