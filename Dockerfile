@@ -10,12 +10,12 @@ RUN apt-get update -y && apt-get upgrade -y \
 	git \ 
  	tzdata curl udev bluez
 	
-#ADD bin/* /usr/local/bin/
+ADD bin/* /usr/local/bin/
+RUN chmod +x /usr/local/bin/*
+
 RUN groupmod -g 1001 node && usermod -u 1001 -g 1001 node
 RUN usermod -d /home/iobroker -l iobroker node
 RUN groupmod -n iobroker node
-#RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs &> /dev/null
-#RUN chmod +x /usr/local/bin/*
 
 # iobroker needs npm >= 9
 RUN npm install -g npm@9
