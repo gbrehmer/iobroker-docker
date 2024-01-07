@@ -13,7 +13,7 @@ RUN apt-get update -y && apt-get upgrade -y \
 #ADD bin/* /usr/local/bin/
 RUN groupmod -g 1001 node && usermod -u 1001 -g 1001 node
 RUN usermod -d /home/iobroker -l iobroker node
-RUN groupmod --new-name node iobroker
+RUN groupmod -n iobroker node
 #RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs &> /dev/null
 #RUN chmod +x /usr/local/bin/*
 
