@@ -14,7 +14,7 @@ ADD bin/* /usr/local/bin/
 RUN chmod +x /usr/local/bin/*
 
 RUN groupmod -g 1001 node && usermod -u 1001 -g 1001 node
-RUN usermod -d /home/iobroker -l iobroker node
+RUN usermod -d /opt/iobroker -l iobroker node
 RUN groupmod -n iobroker node
 
 # iobroker needs npm >= 9
