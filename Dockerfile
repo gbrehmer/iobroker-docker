@@ -1,4 +1,4 @@
-FROM node:18-buster-slim
+FROM node:20.18.0-bookworm-slim
 
 #ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Berlin
