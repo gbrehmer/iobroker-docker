@@ -4,7 +4,7 @@ FROM node:20.18.0-bookworm-slim
 ENV TZ=Europe/Berlin
 
 RUN apt-get update -y && apt-get upgrade -y \
-	&& apt-get install -y sudo apt-utils build-essential libavahi-compat-libdnssd-dev libudev-dev libpam0g-dev procps \
+	&& apt-get install -y sudo apt-utils build-essential iputils-ping libavahi-compat-libdnssd-dev libudev-dev libpam0g-dev procps \
 	acl libcap2-bin \
 	vim bash python3 \
 	git \ 
