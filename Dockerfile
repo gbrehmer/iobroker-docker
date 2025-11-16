@@ -1,4 +1,4 @@
-FROM node:20.18.0-bookworm-slim
+FROM node:22.21.1-bookworm-slim
 
 #ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Berlin
@@ -18,7 +18,7 @@ RUN usermod -d /opt/iobroker -l iobroker node
 RUN groupmod -n iobroker node
 
 # iobroker needs npm >= 9
-RUN npm install -g npm@9
+RUN npm install -g npm@10
 
 # Install iobroker
 RUN curl -sL https://iobroker.net/install.sh | bash - && echo $(hostname) > .install_host
